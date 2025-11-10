@@ -37,7 +37,7 @@ export default function NumberTheoryPage() {
 
               <h3>Division Algorithm</h3>
               <p>For any integers a and b with b &gt; 0, there exist unique integers q and r such that:</p>
-              <p className="font-mono bg-muted p-2 rounded">a = bq + r, where 0 ≤ r &lt; b</p>
+              <p className="my-4"><BlockLatex math="a = bq + r \text{ where } 0 \leq r < b" /></p>
               <p>q is the quotient, r is the remainder</p>
             </CardContent>
           </Card>
@@ -100,9 +100,9 @@ export default function NumberTheoryPage() {
 
               <h3>Example</h3>
               <div className="bg-muted p-4 rounded space-y-2">
-                <p className="font-mono">60 = 2² × 3 × 5</p>
-                <p className="font-mono">100 = 2² × 5²</p>
-                <p className="font-mono">1001 = 7 × 11 × 13</p>
+                <p><Latex math="60 = 2^2 \times 3 \times 5" /></p>
+                <p><Latex math="100 = 2^2 \times 5^2" /></p>
+                <p><Latex math="1001 = 7 \times 11 \times 13" /></p>
               </div>
 
               <h3>Canonical Form</h3>

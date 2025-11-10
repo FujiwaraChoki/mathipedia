@@ -28,8 +28,8 @@ export default function DiscreteMathPage() {
 
               <h3>Set Notation</h3>
               <div className="bg-muted p-4 rounded space-y-2">
-                <p className="font-mono">A = {'{1, 2, 3, 4, 5}'}</p>
-                <p className="font-mono">B = {'{x | x is an even number}'}</p>
+                <p><Latex math="A = \{1, 2, 3, 4, 5\}" /></p>
+                <p><Latex math="B = \{x \mid x \text{ is an even number}\}" /></p>
               </div>
 
               <h3>Set Operations</h3>
@@ -142,18 +142,18 @@ export default function DiscreteMathPage() {
                 An arrangement of objects in a specific order. The number of permutations of n
                 objects is:
               </p>
-              <p className="font-mono bg-muted p-2 rounded">P(n) = n!</p>
+              <p className="my-4"><BlockLatex math="P(n) = n!" /></p>
               <p>
                 The number of permutations of r objects chosen from n objects is:
               </p>
-              <p className="font-mono bg-muted p-2 rounded">P(n,r) = n!/(n-r)!</p>
+              <p className="my-4"><BlockLatex math="P(n,r) = \frac{n!}{(n-r)!}" /></p>
 
               <h3>Combinations</h3>
               <p>
                 A selection of objects where order doesn't matter. The number of combinations of r
                 objects chosen from n objects is:
               </p>
-              <p className="font-mono bg-muted p-2 rounded">C(n,r) = n!/[r!(n-r)!]</p>
+              <p className="my-4"><BlockLatex math="C(n,r) = \frac{n!}{r!(n-r)!}" /></p>
 
               <h3>Example</h3>
               <div className="bg-muted p-4 rounded space-y-2">

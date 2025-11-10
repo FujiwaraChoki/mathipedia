@@ -110,7 +110,7 @@ export default function GeometryPage() {
                 In a right triangle, the square of the hypotenuse (the side opposite the right
                 angle) equals the sum of squares of the other two sides:
               </p>
-              <p className="font-mono bg-muted p-2 rounded">a² + b² = c²</p>
+              <div className="my-4"><BlockLatex math="a^2 + b^2 = c^2" /></div>
 
               <h3>Area of a Triangle</h3>
               <p className="font-mono bg-muted p-2 rounded">
@@ -141,8 +141,8 @@ export default function GeometryPage() {
 
               <h3>Circle Formulas</h3>
               <div className="bg-muted p-4 rounded space-y-2">
-                <p className="font-mono">Circumference: C = 2πr = πd</p>
-                <p className="font-mono">Area: A = πr²</p>
+                <p><strong>Circumference:</strong> <Latex math="C = 2\pi r = \pi d" /></p>
+                <p><strong>Area:</strong> <Latex math="A = \pi r^2" /></p>
               </div>
 
               <h3>Arc and Sector</h3>
@@ -199,32 +199,32 @@ export default function GeometryPage() {
               <h3>Cube</h3>
               <p>A three-dimensional shape with 6 square faces.</p>
               <div className="bg-muted p-4 rounded space-y-2">
-                <p className="font-mono">Volume: V = s³ (where s is side length)</p>
-                <p className="font-mono">Surface Area: SA = 6s²</p>
+                <p><strong>Volume:</strong> <Latex math="V = s^3" /> (where s is side length)</p>
+                <p><strong>Surface Area:</strong> <Latex math="SA = 6s^2" /></p>
               </div>
 
               <h3>Rectangular Prism (Box)</h3>
               <div className="bg-muted p-4 rounded space-y-2">
-                <p className="font-mono">Volume: V = l × w × h</p>
-                <p className="font-mono">Surface Area: SA = 2(lw + lh + wh)</p>
+                <p><strong>Volume:</strong> <Latex math="V = l \times w \times h" /></p>
+                <p><strong>Surface Area:</strong> <Latex math="SA = 2(lw + lh + wh)" /></p>
               </div>
 
               <h3>Sphere</h3>
               <div className="bg-muted p-4 rounded space-y-2">
-                <p className="font-mono">Volume: V = (4/3)πr³</p>
-                <p className="font-mono">Surface Area: SA = 4πr²</p>
+                <p><strong>Volume:</strong> <Latex math="V = \frac{4}{3}\pi r^3" /></p>
+                <p><strong>Surface Area:</strong> <Latex math="SA = 4\pi r^2" /></p>
               </div>
 
               <h3>Cylinder</h3>
               <div className="bg-muted p-4 rounded space-y-2">
-                <p className="font-mono">Volume: V = πr²h</p>
-                <p className="font-mono">Surface Area: SA = 2πr² + 2πrh</p>
+                <p><strong>Volume:</strong> <Latex math="V = \pi r^2 h" /></p>
+                <p><strong>Surface Area:</strong> <Latex math="SA = 2\pi r^2 + 2\pi rh" /></p>
               </div>
 
               <h3>Cone</h3>
               <div className="bg-muted p-4 rounded space-y-2">
-                <p className="font-mono">Volume: V = (1/3)πr²h</p>
-                <p className="font-mono">Surface Area: SA = πr² + πrl (where l is slant height)</p>
+                <p><strong>Volume:</strong> <Latex math="V = \frac{1}{3}\pi r^2 h" /></p>
+                <p><strong>Surface Area:</strong> <Latex math="SA = \pi r^2 + \pi rl" /> (where l is slant height)</p>
               </div>
             </CardContent>
           </Card>
