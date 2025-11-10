@@ -1,4 +1,7 @@
+"use client";
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Latex, BlockLatex } from "@/components/latex";
 
 export default function TrigonometryPage() {
   return (
@@ -77,8 +80,10 @@ export default function TrigonometryPage() {
 
               <h3>Radian Measure</h3>
               <p>Radians measure angles by arc length on unit circle:</p>
-              <p className="font-mono bg-muted p-2 rounded">1 radian = 180°/π ≈ 57.3°</p>
-              <p className="font-mono bg-muted p-2 rounded">π radians = 180°</p>
+              <div className="my-4 space-y-2">
+                <BlockLatex math="1 \text{ radian} = \frac{180°}{\pi} \approx 57.3°" />
+                <BlockLatex math="\pi \text{ radians} = 180°" />
+              </div>
 
               <h3>Quadrant Signs</h3>
               <ul>
@@ -98,14 +103,20 @@ export default function TrigonometryPage() {
             </CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
               <h3>Primary Identity</h3>
-              <p className="font-mono bg-muted p-2 rounded">sin²(θ) + cos²(θ) = 1</p>
+              <div className="my-4">
+                <BlockLatex math="\sin^2(\theta) + \cos^2(\theta) = 1" />
+              </div>
 
               <h3>Derived Identities</h3>
-              <p>Divide by cos²(θ):</p>
-              <p className="font-mono bg-muted p-2 rounded">tan²(θ) + 1 = sec²(θ)</p>
+              <p>Divide by <Latex math="\cos^2(\theta)" />:</p>
+              <div className="my-4">
+                <BlockLatex math="\tan^2(\theta) + 1 = \sec^2(\theta)" />
+              </div>
 
-              <p>Divide by sin²(θ):</p>
-              <p className="font-mono bg-muted p-2 rounded">1 + cot²(θ) = csc²(θ)</p>
+              <p>Divide by <Latex math="\sin^2(\theta)" />:</p>
+              <div className="my-4">
+                <BlockLatex math="1 + \cot^2(\theta) = \csc^2(\theta)" />
+              </div>
             </CardContent>
           </Card>
 
@@ -117,16 +128,16 @@ export default function TrigonometryPage() {
             <CardContent className="prose dark:prose-invert max-w-none">
               <h3>Sum Formulas</h3>
               <ul>
-                <li className="font-mono bg-muted p-2 rounded my-2">sin(α + β) = sin(α)cos(β) + cos(α)sin(β)</li>
-                <li className="font-mono bg-muted p-2 rounded my-2">cos(α + β) = cos(α)cos(β) - sin(α)sin(β)</li>
-                <li className="font-mono bg-muted p-2 rounded my-2">tan(α + β) = [tan(α) + tan(β)] / [1 - tan(α)tan(β)]</li>
+                <li className="my-2"><BlockLatex math="\sin(\alpha + \beta) = \sin(\alpha)\cos(\beta) + \cos(\alpha)\sin(\beta)" /></li>
+                <li className="my-2"><BlockLatex math="\cos(\alpha + \beta) = \cos(\alpha)\cos(\beta) - \sin(\alpha)\sin(\beta)" /></li>
+                <li className="my-2"><BlockLatex math="\tan(\alpha + \beta) = \frac{\tan(\alpha) + \tan(\beta)}{1 - \tan(\alpha)\tan(\beta)}" /></li>
               </ul>
 
               <h3>Difference Formulas</h3>
               <ul>
-                <li className="font-mono bg-muted p-2 rounded my-2">sin(α - β) = sin(α)cos(β) - cos(α)sin(β)</li>
-                <li className="font-mono bg-muted p-2 rounded my-2">cos(α - β) = cos(α)cos(β) + sin(α)sin(β)</li>
-                <li className="font-mono bg-muted p-2 rounded my-2">tan(α - β) = [tan(α) - tan(β)] / [1 + tan(α)tan(β)]</li>
+                <li className="my-2"><BlockLatex math="\sin(\alpha - \beta) = \sin(\alpha)\cos(\beta) - \cos(\alpha)\sin(\beta)" /></li>
+                <li className="my-2"><BlockLatex math="\cos(\alpha - \beta) = \cos(\alpha)\cos(\beta) + \sin(\alpha)\sin(\beta)" /></li>
+                <li className="my-2"><BlockLatex math="\tan(\alpha - \beta) = \frac{\tan(\alpha) - \tan(\beta)}{1 + \tan(\alpha)\tan(\beta)}" /></li>
               </ul>
             </CardContent>
           </Card>
@@ -139,16 +150,16 @@ export default function TrigonometryPage() {
             <CardContent className="prose dark:prose-invert max-w-none">
               <h3>Double Angle Formulas</h3>
               <ul>
-                <li className="font-mono bg-muted p-2 rounded my-2">sin(2θ) = 2sin(θ)cos(θ)</li>
-                <li className="font-mono bg-muted p-2 rounded my-2">cos(2θ) = cos²(θ) - sin²(θ) = 2cos²(θ) - 1 = 1 - 2sin²(θ)</li>
-                <li className="font-mono bg-muted p-2 rounded my-2">tan(2θ) = 2tan(θ) / [1 - tan²(θ)]</li>
+                <li className="my-2"><BlockLatex math="\sin(2\theta) = 2\sin(\theta)\cos(\theta)" /></li>
+                <li className="my-2"><BlockLatex math="\cos(2\theta) = \cos^2(\theta) - \sin^2(\theta) = 2\cos^2(\theta) - 1 = 1 - 2\sin^2(\theta)" /></li>
+                <li className="my-2"><BlockLatex math="\tan(2\theta) = \frac{2\tan(\theta)}{1 - \tan^2(\theta)}" /></li>
               </ul>
 
               <h3>Half Angle Formulas</h3>
               <ul>
-                <li className="font-mono bg-muted p-2 rounded my-2">sin(θ/2) = ±√[(1 - cos(θ))/2]</li>
-                <li className="font-mono bg-muted p-2 rounded my-2">cos(θ/2) = ±√[(1 + cos(θ))/2]</li>
-                <li className="font-mono bg-muted p-2 rounded my-2">tan(θ/2) = sin(θ)/(1 + cos(θ)) = (1 - cos(θ))/sin(θ)</li>
+                <li className="my-2"><BlockLatex math="\sin(\theta/2) = \pm\sqrt{\frac{1 - \cos(\theta)}{2}}" /></li>
+                <li className="my-2"><BlockLatex math="\cos(\theta/2) = \pm\sqrt{\frac{1 + \cos(\theta)}{2}}" /></li>
+                <li className="my-2"><BlockLatex math="\tan(\theta/2) = \frac{\sin(\theta)}{1 + \cos(\theta)} = \frac{1 - \cos(\theta)}{\sin(\theta)}" /></li>
               </ul>
             </CardContent>
           </Card>
@@ -209,9 +220,9 @@ export default function TrigonometryPage() {
             <CardContent className="prose dark:prose-invert max-w-none">
               <h3>Formulas</h3>
               <ul>
-                <li className="font-mono bg-muted p-2 rounded my-2">c² = a² + b² - 2ab·cos(C)</li>
-                <li className="font-mono bg-muted p-2 rounded my-2">b² = a² + c² - 2ac·cos(B)</li>
-                <li className="font-mono bg-muted p-2 rounded my-2">a² = b² + c² - 2bc·cos(A)</li>
+                <li className="my-2"><BlockLatex math="c^2 = a^2 + b^2 - 2ab\cos(C)" /></li>
+                <li className="my-2"><BlockLatex math="b^2 = a^2 + c^2 - 2ac\cos(B)" /></li>
+                <li className="my-2"><BlockLatex math="a^2 = b^2 + c^2 - 2bc\cos(A)" /></li>
               </ul>
 
               <h3>When to Use</h3>
@@ -244,8 +255,8 @@ export default function TrigonometryPage() {
               <h3>Example</h3>
               <div className="bg-muted p-4 rounded space-y-2">
                 <p className="font-mono">Solve: 2sin(x) = 1 for 0 ≤ x &lt; 2π</p>
-                <p className="font-mono">sin(x) = 1/2</p>
-                <p className="font-mono">x = π/6 or x = 5π/6</p>
+                <BlockLatex math="\sin(x) = \frac{1}{2}" />
+                <BlockLatex math="x = \frac{\pi}{6} \text{ or } x = \frac{5\pi}{6}" />
               </div>
 
               <h3>Common Techniques</h3>

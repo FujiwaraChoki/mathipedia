@@ -1,4 +1,7 @@
+"use client";
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Latex, BlockLatex } from "@/components/latex";
 
 export default function GeometryPage() {
   return (
