@@ -1,4 +1,7 @@
+"use client";
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Latex, BlockLatex } from "@/components/latex";
 
 export default function CalculusPage() {
   return (
@@ -24,22 +27,24 @@ export default function CalculusPage() {
               </p>
 
               <h3>Notation</h3>
-              <p className="font-mono bg-muted p-2 rounded">lim(x→a) f(x) = L</p>
+              <div className="my-4">
+                <BlockLatex math="\lim_{x \to a} f(x) = L" />
+              </div>
               <p>
                 This reads: "the limit of f(x) as x approaches a equals L"
               </p>
 
               <h3>Example</h3>
-              <div className="bg-muted p-4 rounded space-y-2">
-                <p className="font-mono">lim(x→2) (x² + 1)</p>
-                <p className="font-mono">= 2² + 1 = 5</p>
+              <div className="bg-muted p-4 rounded space-y-3">
+                <BlockLatex math="\lim_{x \to 2} (x^2 + 1)" />
+                <BlockLatex math="= 2^2 + 1 = 5" />
               </div>
 
               <h3>Properties of Limits</h3>
               <ul>
-                <li>lim(x→a) [f(x) + g(x)] = lim(x→a) f(x) + lim(x→a) g(x)</li>
-                <li>lim(x→a) [f(x) × g(x)] = lim(x→a) f(x) × lim(x→a) g(x)</li>
-                <li>lim(x→a) [c × f(x)] = c × lim(x→a) f(x), where c is a constant</li>
+                <li><Latex math="\lim_{x \to a} [f(x) + g(x)] = \lim_{x \to a} f(x) + \lim_{x \to a} g(x)" /></li>
+                <li><Latex math="\lim_{x \to a} [f(x) \times g(x)] = \lim_{x \to a} f(x) \times \lim_{x \to a} g(x)" /></li>
+                <li><Latex math="\lim_{x \to a} [c \times f(x)] = c \times \lim_{x \to a} f(x)" />, where c is a constant</li>
               </ul>
             </CardContent>
           </Card>
@@ -57,32 +62,32 @@ export default function CalculusPage() {
               </p>
 
               <h3>Definition</h3>
-              <p className="font-mono bg-muted p-2 rounded">
-                f'(x) = lim(h→0) [f(x + h) - f(x)] / h
-              </p>
+              <div className="my-4">
+                <BlockLatex math="f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}" />
+              </div>
 
               <h3>Notation</h3>
               <p>Several notations are used for derivatives:</p>
               <ul className="list-disc ml-6">
-                <li>f'(x) - Lagrange notation</li>
-                <li>dy/dx - Leibniz notation</li>
-                <li>df/dx - Alternative Leibniz notation</li>
+                <li><Latex>f'(x)</Latex> - Lagrange notation</li>
+                <li><Latex math="\frac{dy}{dx}" /> - Leibniz notation</li>
+                <li><Latex math="\frac{df}{dx}" /> - Alternative Leibniz notation</li>
               </ul>
 
               <h3>Basic Derivative Rules</h3>
-              <div className="bg-muted p-4 rounded space-y-2">
-                <p className="font-mono">d/dx(c) = 0 (constant rule)</p>
-                <p className="font-mono">d/dx(x) = 1</p>
-                <p className="font-mono">d/dx(xⁿ) = n·xⁿ⁻¹ (power rule)</p>
-                <p className="font-mono">d/dx(eˣ) = eˣ</p>
-                <p className="font-mono">d/dx(sin x) = cos x</p>
-                <p className="font-mono">d/dx(cos x) = -sin x</p>
+              <div className="bg-muted p-4 rounded space-y-3">
+                <BlockLatex math="\frac{d}{dx}(c) = 0 \text{ (constant rule)}" />
+                <BlockLatex math="\frac{d}{dx}(x) = 1" />
+                <BlockLatex math="\frac{d}{dx}(x^n) = nx^{n-1} \text{ (power rule)}" />
+                <BlockLatex math="\frac{d}{dx}(e^x) = e^x" />
+                <BlockLatex math="\frac{d}{dx}(\sin x) = \cos x" />
+                <BlockLatex math="\frac{d}{dx}(\cos x) = -\sin x" />
               </div>
 
               <h3>Example</h3>
-              <div className="bg-muted p-4 rounded space-y-2">
-                <p className="font-mono">If f(x) = x³</p>
-                <p className="font-mono">Then f'(x) = 3x²</p>
+              <div className="bg-muted p-4 rounded space-y-3">
+                <p>If <Latex>f(x) = x^3</Latex></p>
+                <p>Then <Latex>f'(x) = 3x^2</Latex></p>
               </div>
             </CardContent>
           </Card>
@@ -103,14 +108,16 @@ export default function CalculusPage() {
                 An indefinite integral represents a family of functions and includes a constant of
                 integration (C).
               </p>
-              <p className="font-mono bg-muted p-2 rounded">∫ f(x) dx = F(x) + C</p>
+              <div className="my-4">
+                <BlockLatex math="\int f(x) \, dx = F(x) + C" />
+              </div>
 
               <h3>Basic Integration Rules</h3>
-              <div className="bg-muted p-4 rounded space-y-2">
-                <p className="font-mono">∫ xⁿ dx = xⁿ⁺¹/(n+1) + C (n ≠ -1)</p>
-                <p className="font-mono">∫ eˣ dx = eˣ + C</p>
-                <p className="font-mono">∫ sin x dx = -cos x + C</p>
-                <p className="font-mono">∫ cos x dx = sin x + C</p>
+              <div className="bg-muted p-4 rounded space-y-3">
+                <BlockLatex math="\int x^n \, dx = \frac{x^{n+1}}{n+1} + C \quad (n \neq -1)" />
+                <BlockLatex math="\int e^x \, dx = e^x + C" />
+                <BlockLatex math="\int \sin x \, dx = -\cos x + C" />
+                <BlockLatex math="\int \cos x \, dx = \sin x + C" />
               </div>
 
               <h3>Definite Integrals</h3>
@@ -118,15 +125,17 @@ export default function CalculusPage() {
                 A definite integral has upper and lower bounds and represents a specific numerical
                 value (the area under the curve).
               </p>
-              <p className="font-mono bg-muted p-2 rounded">∫[a to b] f(x) dx</p>
+              <div className="my-4">
+                <BlockLatex math="\int_a^b f(x) \, dx" />
+              </div>
 
               <h3>Fundamental Theorem of Calculus</h3>
               <p>
                 If F(x) is an antiderivative of f(x), then:
               </p>
-              <p className="font-mono bg-muted p-2 rounded">
-                ∫[a to b] f(x) dx = F(b) - F(a)
-              </p>
+              <div className="my-4">
+                <BlockLatex math="\int_a^b f(x) \, dx = F(b) - F(a)" />
+              </div>
             </CardContent>
           </Card>
 
@@ -174,23 +183,23 @@ export default function CalculusPage() {
               <p>
                 A series is the sum of the terms of a sequence.
               </p>
-              <p className="font-mono bg-muted p-2 rounded">
-                S = a₁ + a₂ + a₃ + ... = Σ aₙ
-              </p>
+              <div className="my-4">
+                <BlockLatex math="S = a_1 + a_2 + a_3 + \cdots = \sum_{n=1}^{\infty} a_n" />
+              </div>
 
               <h3>Geometric Series</h3>
               <p>A series where each term is multiplied by a constant ratio r:</p>
-              <p className="font-mono bg-muted p-2 rounded">
-                a + ar + ar² + ar³ + ... = a/(1-r) when |r| &lt; 1
-              </p>
+              <div className="my-4">
+                <BlockLatex math="a + ar + ar^2 + ar^3 + \cdots = \frac{a}{1-r} \text{ when } |r| < 1" />
+              </div>
 
               <h3>Taylor Series</h3>
               <p>
                 A way to represent functions as infinite sums of terms:
               </p>
-              <p className="font-mono bg-muted p-2 rounded">
-                f(x) = f(a) + f'(a)(x-a) + f''(a)(x-a)²/2! + ...
-              </p>
+              <div className="my-4">
+                <BlockLatex math="f(x) = f(a) + f'(a)(x-a) + \frac{f''(a)(x-a)^2}{2!} + \frac{f'''(a)(x-a)^3}{3!} + \cdots" />
+              </div>
             </CardContent>
           </Card>
         </div>

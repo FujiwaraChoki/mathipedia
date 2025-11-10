@@ -125,14 +125,14 @@ export default function LinearEquationsPage() {
               <h3>Understanding Slope</h3>
               <p>The slope <Latex>m</Latex> represents the steepness and direction of the line:</p>
               <div className="my-4">
-                <BlockLatex>m = \frac{"{\\text{rise}}"}{"{\\text{run}"} = \frac{"{y_2 - y_1}"}{"{x_2 - x_1}"}</BlockLatex>
+                <BlockLatex math="m = \frac{\text{rise}}{\text{run}} = \frac{y_2 - y_1}{x_2 - x_1}" />
               </div>
               <ul>
                 <li>
-                  If <Latex>m {">"} 0</Latex>: line slopes upward (positive slope)
+                  If <Latex math="m > 0" />: line slopes upward (positive slope)
                 </li>
                 <li>
-                  If <Latex>m {"<"} 0</Latex>: line slopes downward (negative slope)
+                  If <Latex math="m < 0" />: line slopes downward (negative slope)
                 </li>
                 <li>
                   If <Latex>m = 0</Latex>: horizontal line
@@ -182,7 +182,7 @@ export default function LinearEquationsPage() {
                 <p>
                   <strong>Step 2:</strong> Divide both sides by 3
                 </p>
-                <BlockLatex>\frac{"{3x}"}{"{3}"} = \frac{"{15}"}{"{3}"}</BlockLatex>
+                <BlockLatex math="\frac{3x}{3} = \frac{15}{3}" />
                 <BlockLatex>x = 5</BlockLatex>
                 <p>
                   <strong>Verification:</strong> Substitute <Latex>x = 5</Latex> back into the original equation:
@@ -211,13 +211,13 @@ export default function LinearEquationsPage() {
 
               <h3>Example 3: Equations with Fractions</h3>
               <p>
-                Solve: <Latex>\frac{"{x}"}{"{3}"} + \frac{"{2}"}{"{5}"} = 1</Latex>
+                Solve: <Latex math="\frac{x}{3} + \frac{2}{5} = 1" />
               </p>
               <div className="bg-muted p-4 rounded space-y-3">
                 <p>
                   <strong>Step 1:</strong> Find common denominator (15) and multiply entire equation by it
                 </p>
-                <BlockLatex>15 \cdot \left(\frac{"{x}"}{"{3}"} + \frac{"{2}"}{"{5}"}\right) = 15 \cdot 1</BlockLatex>
+                <BlockLatex math="15 \cdot \left(\frac{x}{3} + \frac{2}{5}\right) = 15 \cdot 1" />
                 <BlockLatex>5x + 6 = 15</BlockLatex>
                 <p>
                   <strong>Step 2:</strong> Subtract 6 from both sides
@@ -226,7 +226,7 @@ export default function LinearEquationsPage() {
                 <p>
                   <strong>Step 3:</strong> Divide by 5
                 </p>
-                <BlockLatex>x = \frac{"{9}"}{"{5}"}</BlockLatex>
+                <BlockLatex math="x = \frac{9}{5}" />
               </div>
             </CardContent>
           </Card>
@@ -292,7 +292,7 @@ export default function LinearEquationsPage() {
                 <BlockLatex>3(3) + 2y = 16</BlockLatex>
                 <BlockLatex>9 + 2y = 16</BlockLatex>
                 <BlockLatex>2y = 7</BlockLatex>
-                <BlockLatex>y = \frac{"{7}"}{"{2}"}</BlockLatex>
+                <BlockLatex math="y = \frac{7}{2}" />
               </div>
             </CardContent>
           </Card>

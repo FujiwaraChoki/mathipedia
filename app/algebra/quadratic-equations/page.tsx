@@ -132,7 +132,7 @@ export default function QuadraticEquationsPage() {
                 gives the solutions to any quadratic equation:
               </p>
               <div className="my-4">
-                <BlockLatex>x = \frac{"{-b \\pm \\sqrt{b^2 - 4ac}}"}{"{2a}"}</BlockLatex>
+                <BlockLatex math="x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}" />
               </div>
 
               <h3>Derivation by Completing the Square</h3>
@@ -144,30 +144,27 @@ export default function QuadraticEquationsPage() {
                 <p>
                   <strong>Step 2:</strong> Divide by <Latex>a</Latex>
                 </p>
-                <BlockLatex>x^2 + \frac{"{b}"}{"{a}"}x + \frac{"{c}"}{"{a}"} = 0</BlockLatex>
+                <BlockLatex math="x^2 + \frac{b}{a}x + \frac{c}{a} = 0" />
                 <p>
                   <strong>Step 3:</strong> Move constant to right side
                 </p>
-                <BlockLatex>x^2 + \frac{"{b}"}{"{a}"}x = -\frac{"{c}"}{"{a}"}</BlockLatex>
+                <BlockLatex math="x^2 + \frac{b}{a}x = -\frac{c}{a}" />
                 <p>
-                  <strong>Step 4:</strong> Complete the square (add <Latex>(\frac{"{b}"}{"{2a}"})^2</Latex> to both sides)
+                  <strong>Step 4:</strong> Complete the square (add <Latex math="(\frac{b}{2a})^2" /> to both sides)
                 </p>
-                <BlockLatex>
-                  x^2 + \frac{"{b}"}{"{a}"}x + \left(\frac{"{b}"}{"{2a}"}\right)^2 = -\frac{"{c}"}{"{a}"} +
-                  \left(\frac{"{b}"}{"{2a}"}\right)^2
-                </BlockLatex>
+                <BlockLatex math="x^2 + \frac{b}{a}x + \left(\frac{b}{2a}\right)^2 = -\frac{c}{a} + \left(\frac{b}{2a}\right)^2" />
                 <p>
                   <strong>Step 5:</strong> Factor left side and simplify right side
                 </p>
-                <BlockLatex>\left(x + \frac{"{b}"}{"{2a}"}\right)^2 = \frac{"{b^2 - 4ac}"}{"{4a^2}"}</BlockLatex>
+                <BlockLatex math="\left(x + \frac{b}{2a}\right)^2 = \frac{b^2 - 4ac}{4a^2}" />
                 <p>
                   <strong>Step 6:</strong> Take square root of both sides
                 </p>
-                <BlockLatex>x + \frac{"{b}"}{"{2a}"} = \pm\frac{"{\\sqrt{b^2 - 4ac}}"}{"{2a}"}</BlockLatex>
+                <BlockLatex math="x + \frac{b}{2a} = \pm\frac{\sqrt{b^2 - 4ac}}{2a}" />
                 <p>
                   <strong>Step 7:</strong> Solve for x
                 </p>
-                <BlockLatex>x = \frac{"{-b \\pm \\sqrt{b^2 - 4ac}}"}{"{2a}"}</BlockLatex>
+                <BlockLatex math="x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}" />
               </div>
 
               <h3>Example: Using the Quadratic Formula</h3>
@@ -178,14 +175,12 @@ export default function QuadraticEquationsPage() {
                 <p>
                   Identify: <Latex>a = 2</Latex>, <Latex>b = -5</Latex>, <Latex>c = -3</Latex>
                 </p>
-                <BlockLatex>
-                  x = \frac{"{-(-5) \\pm \\sqrt{(-5)^2 - 4(2)(-3)}}"}{"{2(2)}"}
-                </BlockLatex>
-                <BlockLatex>x = \frac{"{5 \\pm \\sqrt{25 + 24}}"}{"{4}"}</BlockLatex>
-                <BlockLatex>x = \frac{"{5 \\pm \\sqrt{49}}"}{"{4}"}</BlockLatex>
-                <BlockLatex>x = \frac{"{5 \\pm 7}"}{"{4}"}</BlockLatex>
+                <BlockLatex math="x = \frac{-(-5) \pm \sqrt{(-5)^2 - 4(2)(-3)}}{2(2)}" />
+                <BlockLatex math="x = \frac{5 \pm \sqrt{25 + 24}}{4}" />
+                <BlockLatex math="x = \frac{5 \pm \sqrt{49}}{4}" />
+                <BlockLatex math="x = \frac{5 \pm 7}{4}" />
                 <p>
-                  Two solutions: <Latex>x = \frac{"{12}"}{"{4}"} = 3</Latex> or <Latex>x = \frac{"{-2}"}{"{4}"} = -\frac{"{1}"}{"{2}"}</Latex>
+                  Two solutions: <Latex math="x = \frac{12}{4} = 3" /> or <Latex math="x = \frac{-2}{4} = -\frac{1}{2}" />
                 </p>
               </div>
             </CardContent>
@@ -213,7 +208,7 @@ export default function QuadraticEquationsPage() {
               </p>
 
               <h4>
-                Case 1: <Latex>\Delta {">"} 0</Latex> (Positive Discriminant)
+                Case 1: <Latex math="\Delta > 0" /> (Positive Discriminant)
               </h4>
               <ul>
                 <li>
@@ -221,7 +216,7 @@ export default function QuadraticEquationsPage() {
                 </li>
                 <li>The parabola crosses the x-axis at two points</li>
                 <li>
-                  Example: <Latex>x^2 - 5x + 6 = 0</Latex> has <Latex>\Delta = 25 - 24 = 1 {">"} 0</Latex>, solutions{" "}
+                  Example: <Latex>x^2 - 5x + 6 = 0</Latex> has <Latex math="\Delta = 25 - 24 = 1 > 0" />, solutions{" "}
                   <Latex>x = 2, 3</Latex>
                 </li>
               </ul>
@@ -241,7 +236,7 @@ export default function QuadraticEquationsPage() {
               </ul>
 
               <h4>
-                Case 3: <Latex>\Delta {"<"} 0</Latex> (Negative Discriminant)
+                Case 3: <Latex math="\Delta < 0" /> (Negative Discriminant)
               </h4>
               <ul>
                 <li>
@@ -249,10 +244,10 @@ export default function QuadraticEquationsPage() {
                 </li>
                 <li>No real solutions (parabola doesn't cross the x-axis)</li>
                 <li>
-                  Solutions involve <Latex>i = \sqrt{"{-1}"}</Latex>
+                  Solutions involve <Latex math="i = \sqrt{-1}" />
                 </li>
                 <li>
-                  Example: <Latex>x^2 + 2x + 5 = 0</Latex> has <Latex>\Delta = 4 - 20 = -16 {"<"} 0</Latex>, solutions{" "}
+                  Example: <Latex>x^2 + 2x + 5 = 0</Latex> has <Latex math="\Delta = 4 - 20 = -16 < 0" />, solutions{" "}
                   <Latex>x = -1 \pm 2i</Latex>
                 </li>
               </ul>
@@ -274,7 +269,7 @@ export default function QuadraticEquationsPage() {
               <h3>Zero Product Property</h3>
               <p>The foundation of factoring:</p>
               <div className="my-4">
-                <BlockLatex>\text{"{If }"} AB = 0 \text{"{, then }"} A = 0 \text{" or "} B = 0</BlockLatex>
+                <BlockLatex math="\text{If } AB = 0 \text{, then } A = 0 \text{ or } B = 0" />
               </div>
 
               <h3>Factoring Methods</h3>
@@ -314,7 +309,7 @@ export default function QuadraticEquationsPage() {
                 <BlockLatex>3x(2x + 3) + 1(2x + 3) = 0</BlockLatex>
                 <BlockLatex>(3x + 1)(2x + 3) = 0</BlockLatex>
                 <p>
-                  Solutions: <Latex>x = -\frac{"{1}"}{"{3}"}</Latex> or <Latex>x = -\frac{"{3}"}{"{2}"}</Latex>
+                  Solutions: <Latex math="x = -\frac{1}{3}" /> or <Latex math="x = -\frac{3}{2}" />
                 </p>
               </div>
 
@@ -366,14 +361,14 @@ export default function QuadraticEquationsPage() {
                 <p>
                   <strong>Sum of roots:</strong>
                 </p>
-                <BlockLatex>r_1 + r_2 = -\frac{"{b}"}{"{a}"}</BlockLatex>
+                <BlockLatex math="r_1 + r_2 = -\frac{b}{a}" />
               </div>
 
               <div className="my-4">
                 <p>
                   <strong>Product of roots:</strong>
                 </p>
-                <BlockLatex>r_1 \cdot r_2 = \frac{"{c}"}{"{a}"}</BlockLatex>
+                <BlockLatex math="r_1 \cdot r_2 = \frac{c}{a}" />
               </div>
 
               <h3>Example Application</h3>
@@ -382,10 +377,10 @@ export default function QuadraticEquationsPage() {
               </p>
               <div className="bg-muted p-4 rounded space-y-3">
                 <p>
-                  Sum: <Latex>3 + (-5) = -2</Latex>, so <Latex>-\frac{"{b}"}{"{a}"} = -2</Latex>
+                  Sum: <Latex>3 + (-5) = -2</Latex>, so <Latex math="-\frac{b}{a} = -2" />
                 </p>
                 <p>
-                  Product: <Latex>3 \times (-5) = -15</Latex>, so <Latex>\frac{"{c}"}{"{a}"} = -15</Latex>
+                  Product: <Latex>3 \times (-5) = -15</Latex>, so <Latex math="\frac{c}{a} = -15" />
                 </p>
                 <p>
                   Choosing <Latex>a = 1</Latex>: <Latex>b = 2</Latex>, <Latex>c = -15</Latex>
@@ -408,7 +403,7 @@ export default function QuadraticEquationsPage() {
               <p>
                 The height of a projectile at time <Latex>t</Latex> is given by:
               </p>
-              <BlockLatex>h(t) = -\frac{"{1}"}{"{2}"}gt^2 + v_0t + h_0</BlockLatex>
+              <BlockLatex math="h(t) = -\frac{1}{2}gt^2 + v_0t + h_0" />
               <p>
                 where <Latex>g</Latex> is gravity, <Latex>v_0</Latex> is initial velocity, and <Latex>h_0</Latex> is
                 initial height. Finding when the projectile hits the ground requires solving a quadratic equation.
@@ -423,7 +418,7 @@ export default function QuadraticEquationsPage() {
                 <p>
                   Using the quadratic formula with <Latex>a = -4.9</Latex>, <Latex>b = 20</Latex>, <Latex>c = 2</Latex>:
                 </p>
-                <BlockLatex>t = \frac{"{-20 \\pm \\sqrt{400 + 39.2}}"}{"{-9.8}"} \approx 4.18 \text{" seconds"}</BlockLatex>
+                <BlockLatex math="t = \frac{-20 \pm \sqrt{400 + 39.2}}{-9.8} \approx 4.18 \text{ seconds}" />
                 <p>(taking the positive root)</p>
               </div>
 

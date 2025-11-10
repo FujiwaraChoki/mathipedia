@@ -1,4 +1,7 @@
+"use client";
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Latex, BlockLatex } from "@/components/latex";
 
 export default function LinearAlgebraPage() {
   return (
@@ -22,29 +25,37 @@ export default function LinearAlgebraPage() {
               <p>
                 A vector is an ordered list of numbers. Vectors can be written as rows or columns.
               </p>
-              <p className="font-mono bg-muted p-2 rounded">v = [v₁, v₂, ..., vₙ] or v = (v₁, v₂, ..., vₙ)</p>
+              <div className="my-4">
+                <BlockLatex math="\mathbf{v} = [v_1, v_2, \ldots, v_n] \text{ or } \mathbf{v} = (v_1, v_2, \ldots, v_n)" />
+              </div>
 
               <h3>Vector Operations</h3>
               <h4>Addition:</h4>
-              <p className="font-mono bg-muted p-2 rounded">
-                (a₁, a₂) + (b₁, b₂) = (a₁ + b₁, a₂ + b₂)
-              </p>
+              <div className="my-4">
+                <BlockLatex math="(a_1, a_2) + (b_1, b_2) = (a_1 + b_1, a_2 + b_2)" />
+              </div>
 
               <h4>Scalar Multiplication:</h4>
-              <p className="font-mono bg-muted p-2 rounded">c · (a₁, a₂) = (c·a₁, c·a₂)</p>
+              <div className="my-4">
+                <BlockLatex math="c \cdot (a_1, a_2) = (c \cdot a_1, c \cdot a_2)" />
+              </div>
 
               <h3>Dot Product</h3>
               <p>The dot product of two vectors:</p>
-              <p className="font-mono bg-muted p-2 rounded">
-                a · b = a₁b₁ + a₂b₂ + ... + aₙbₙ
-              </p>
+              <div className="my-4">
+                <BlockLatex math="\mathbf{a} \cdot \mathbf{b} = a_1 b_1 + a_2 b_2 + \cdots + a_n b_n" />
+              </div>
 
               <h3>Vector Length (Magnitude)</h3>
-              <p className="font-mono bg-muted p-2 rounded">||v|| = √(v₁² + v₂² + ... + vₙ²)</p>
+              <div className="my-4">
+                <BlockLatex math="||\mathbf{v}|| = \sqrt{v_1^2 + v_2^2 + \cdots + v_n^2}" />
+              </div>
 
               <h3>Unit Vectors</h3>
               <p>A unit vector has length 1. To normalize a vector:</p>
-              <p className="font-mono bg-muted p-2 rounded">û = v / ||v||</p>
+              <div className="my-4">
+                <BlockLatex math="\hat{\mathbf{u}} = \frac{\mathbf{v}}{||\mathbf{v}||}" />
+              </div>
             </CardContent>
           </Card>
 
@@ -69,26 +80,28 @@ export default function LinearAlgebraPage() {
 
               <h4>Matrix Multiplication:</h4>
               <p>For matrices A (m × n) and B (n × p):</p>
-              <p className="font-mono bg-muted p-2 rounded">
-                (AB)ᵢⱼ = Σ(k=1 to n) aᵢₖ · bₖⱼ
-              </p>
-              <p>Note: AB ≠ BA in general (not commutative)</p>
+              <div className="my-4">
+                <BlockLatex math="(AB)_{ij} = \sum_{k=1}^{n} a_{ik} \cdot b_{kj}" />
+              </div>
+              <p>Note: <Latex math="AB \neq BA" /> in general (not commutative)</p>
 
               <h3>Special Matrices</h3>
               <ul>
                 <li><strong>Identity Matrix (I):</strong> 1s on diagonal, 0s elsewhere</li>
                 <li><strong>Zero Matrix:</strong> All elements are 0</li>
                 <li><strong>Diagonal Matrix:</strong> Non-zero elements only on diagonal</li>
-                <li><strong>Symmetric Matrix:</strong> A = Aᵀ</li>
+                <li><strong>Symmetric Matrix:</strong> <Latex math="A = A^T" /></li>
                 <li><strong>Upper/Lower Triangular:</strong> Zeros below/above diagonal</li>
               </ul>
 
               <h3>Matrix Transpose</h3>
-              <p>Flip rows and columns: (Aᵀ)ᵢⱼ = Aⱼᵢ</p>
+              <p>Flip rows and columns: <Latex math="(A^T)_{ij} = A_{ji}" /></p>
 
               <h3>Trace</h3>
               <p>Sum of diagonal elements:</p>
-              <p className="font-mono bg-muted p-2 rounded">tr(A) = Σ aᵢᵢ</p>
+              <div className="my-4">
+                <BlockLatex math="\text{tr}(A) = \sum_{i=1}^{n} a_{ii}" />
+              </div>
             </CardContent>
           </Card>
 
@@ -99,20 +112,20 @@ export default function LinearAlgebraPage() {
             </CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
               <h3>2×2 Determinant</h3>
-              <p className="font-mono bg-muted p-2 rounded">
-                det([a b; c d]) = ad - bc
-              </p>
+              <div className="my-4">
+                <BlockLatex math="\det\begin{pmatrix} a & b \\ c & d \end{pmatrix} = ad - bc" />
+              </div>
 
               <h3>3×3 Determinant</h3>
               <p>Computed using cofactor expansion along any row or column.</p>
 
               <h3>Properties</h3>
               <ul>
-                <li>det(AB) = det(A) · det(B)</li>
-                <li>det(Aᵀ) = det(A)</li>
-                <li>det(A⁻¹) = 1/det(A)</li>
-                <li>det(cA) = cⁿ·det(A) for n×n matrix</li>
-                <li>If det(A) = 0, matrix is singular (non-invertible)</li>
+                <li><Latex math="\det(AB) = \det(A) \cdot \det(B)" /></li>
+                <li><Latex math="\det(A^T) = \det(A)" /></li>
+                <li><Latex math="\det(A^{-1}) = \frac{1}{\det(A)}" /></li>
+                <li><Latex math="\det(cA) = c^n \cdot \det(A)" /> for n×n matrix</li>
+                <li>If <Latex math="\det(A) = 0" />, matrix is singular (non-invertible)</li>
               </ul>
 
               <h3>Geometric Interpretation</h3>
@@ -131,8 +144,10 @@ export default function LinearAlgebraPage() {
             <CardContent className="prose dark:prose-invert max-w-none">
               <h3>Matrix Form</h3>
               <p>A system of equations can be written as:</p>
-              <p className="font-mono bg-muted p-2 rounded">Ax = b</p>
-              <p>where A is the coefficient matrix, x is the unknown vector, b is the constant vector.</p>
+              <div className="my-4">
+                <BlockLatex math="A\mathbf{x} = \mathbf{b}" />
+              </div>
+              <p>where A is the coefficient matrix, <Latex math="\mathbf{x}" /> is the unknown vector, <Latex math="\mathbf{b}" /> is the constant vector.</p>
 
               <h3>Gaussian Elimination</h3>
               <p>Transform the augmented matrix [A|b] to row echelon form:</p>
@@ -160,32 +175,36 @@ export default function LinearAlgebraPage() {
             </CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
               <h3>Definition</h3>
-              <p>For square matrix A, the inverse A⁻¹ satisfies:</p>
-              <p className="font-mono bg-muted p-2 rounded">A·A⁻¹ = A⁻¹·A = I</p>
+              <p>For square matrix A, the inverse <Latex math="A^{-1}" /> satisfies:</p>
+              <div className="my-4">
+                <BlockLatex math="A \cdot A^{-1} = A^{-1} \cdot A = I" />
+              </div>
 
               <h3>2×2 Matrix Inverse</h3>
-              <p className="font-mono bg-muted p-2 rounded">
-                A = [a b; c d], A⁻¹ = (1/(ad-bc)) × [d -b; -c a]
-              </p>
+              <div className="my-4">
+                <BlockLatex math="A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}, \quad A^{-1} = \frac{1}{ad-bc} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}" />
+              </div>
 
               <h3>Finding Inverses</h3>
               <p>Methods include:</p>
               <ul>
                 <li>Gauss-Jordan elimination on [A|I]</li>
-                <li>Adjugate matrix method: A⁻¹ = adj(A)/det(A)</li>
+                <li>Adjugate matrix method: <Latex math="A^{-1} = \frac{\text{adj}(A)}{\det(A)}" /></li>
                 <li>LU decomposition</li>
               </ul>
 
               <h3>Properties</h3>
               <ul>
-                <li>(AB)⁻¹ = B⁻¹A⁻¹</li>
-                <li>(Aᵀ)⁻¹ = (A⁻¹)ᵀ</li>
-                <li>(A⁻¹)⁻¹ = A</li>
+                <li><Latex math="(AB)^{-1} = B^{-1}A^{-1}" /></li>
+                <li><Latex math="(A^T)^{-1} = (A^{-1})^T" /></li>
+                <li><Latex math="(A^{-1})^{-1} = A" /></li>
               </ul>
 
               <h3>Solving Ax = b</h3>
               <p>If A is invertible:</p>
-              <p className="font-mono bg-muted p-2 rounded">x = A⁻¹b</p>
+              <div className="my-4">
+                <BlockLatex math="\mathbf{x} = A^{-1}\mathbf{b}" />
+              </div>
             </CardContent>
           </Card>
 
@@ -210,10 +229,10 @@ export default function LinearAlgebraPage() {
               </ul>
 
               <h3>Linear Independence</h3>
-              <p>Vectors v₁, ..., vₙ are linearly independent if:</p>
-              <p className="font-mono bg-muted p-2 rounded">
-                c₁v₁ + c₂v₂ + ... + cₙvₙ = 0 implies c₁ = c₂ = ... = cₙ = 0
-              </p>
+              <p>Vectors <Latex math="\mathbf{v}_1, \ldots, \mathbf{v}_n" /> are linearly independent if:</p>
+              <div className="my-4">
+                <BlockLatex math="c_1\mathbf{v}_1 + c_2\mathbf{v}_2 + \cdots + c_n\mathbf{v}_n = \mathbf{0} \text{ implies } c_1 = c_2 = \cdots = c_n = 0" />
+              </div>
 
               <h3>Span</h3>
               <p>The span of vectors v₁, ..., vₙ is the set of all linear combinations.</p>
@@ -237,16 +256,22 @@ export default function LinearAlgebraPage() {
             </CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
               <h3>Definition</h3>
-              <p>For square matrix A, λ is an eigenvalue and v is an eigenvector if:</p>
-              <p className="font-mono bg-muted p-2 rounded">Av = λv</p>
+              <p>For square matrix A, <Latex math="\lambda" /> is an eigenvalue and <Latex math="\mathbf{v}" /> is an eigenvector if:</p>
+              <div className="my-4">
+                <BlockLatex math="A\mathbf{v} = \lambda\mathbf{v}" />
+              </div>
 
               <h3>Characteristic Equation</h3>
               <p>Find eigenvalues by solving:</p>
-              <p className="font-mono bg-muted p-2 rounded">det(A - λI) = 0</p>
+              <div className="my-4">
+                <BlockLatex math="\det(A - \lambda I) = 0" />
+              </div>
 
               <h3>Finding Eigenvectors</h3>
-              <p>For each eigenvalue λ, solve:</p>
-              <p className="font-mono bg-muted p-2 rounded">(A - λI)v = 0</p>
+              <p>For each eigenvalue <Latex math="\lambda" />, solve:</p>
+              <div className="my-4">
+                <BlockLatex math="(A - \lambda I)\mathbf{v} = \mathbf{0}" />
+              </div>
 
               <h3>Properties</h3>
               <ul>
@@ -257,7 +282,9 @@ export default function LinearAlgebraPage() {
 
               <h3>Diagonalization</h3>
               <p>If A has n linearly independent eigenvectors:</p>
-              <p className="font-mono bg-muted p-2 rounded">A = PDP⁻¹</p>
+              <div className="my-4">
+                <BlockLatex math="A = PDP^{-1}" />
+              </div>
               <p>where D is diagonal with eigenvalues, P has eigenvectors as columns.</p>
             </CardContent>
           </Card>
@@ -280,16 +307,20 @@ export default function LinearAlgebraPage() {
 
               <h3>Kernel (Null Space)</h3>
               <p>The set of vectors that map to zero:</p>
-              <p className="font-mono bg-muted p-2 rounded">ker(T) = {'{v : T(v) = 0}'}</p>
+              <div className="my-4">
+                <BlockLatex math="\ker(T) = \{\mathbf{v} : T(\mathbf{v}) = \mathbf{0}\}" />
+              </div>
 
               <h3>Image (Range)</h3>
               <p>The set of all possible outputs:</p>
-              <p className="font-mono bg-muted p-2 rounded">im(T) = {'{T(v) : v ∈ V}'}</p>
+              <div className="my-4">
+                <BlockLatex math="\text{im}(T) = \{T(\mathbf{v}) : \mathbf{v} \in V\}" />
+              </div>
 
               <h3>Rank-Nullity Theorem</h3>
-              <p className="font-mono bg-muted p-2 rounded">
-                dim(V) = rank(T) + nullity(T)
-              </p>
+              <div className="my-4">
+                <BlockLatex math="\dim(V) = \text{rank}(T) + \text{nullity}(T)" />
+              </div>
 
               <h3>Common Transformations</h3>
               <ul>
@@ -311,16 +342,18 @@ export default function LinearAlgebraPage() {
               <h3>Inner Product</h3>
               <p>A generalization of the dot product with properties:</p>
               <ul>
-                <li>Positivity: ⟨v,v⟩ ≥ 0</li>
+                <li>Positivity: <Latex math="\langle \mathbf{v}, \mathbf{v} \rangle \geq 0" /></li>
                 <li>Linearity in first argument</li>
-                <li>Symmetry: ⟨u,v⟩ = ⟨v,u⟩</li>
+                <li>Symmetry: <Latex math="\langle \mathbf{u}, \mathbf{v} \rangle = \langle \mathbf{v}, \mathbf{u} \rangle" /></li>
               </ul>
 
               <h3>Norm</h3>
-              <p className="font-mono bg-muted p-2 rounded">||v|| = √⟨v,v⟩</p>
+              <div className="my-4">
+                <BlockLatex math="||\mathbf{v}|| = \sqrt{\langle \mathbf{v}, \mathbf{v} \rangle}" />
+              </div>
 
               <h3>Orthogonality</h3>
-              <p>Vectors u and v are orthogonal if ⟨u,v⟩ = 0</p>
+              <p>Vectors <Latex math="\mathbf{u}" /> and <Latex math="\mathbf{v}" /> are orthogonal if <Latex math="\langle \mathbf{u}, \mathbf{v} \rangle = 0" /></p>
 
               <h3>Orthonormal Basis</h3>
               <p>A basis where all vectors are unit vectors and mutually orthogonal.</p>
@@ -329,10 +362,10 @@ export default function LinearAlgebraPage() {
               <p>Algorithm to convert any basis into an orthonormal basis.</p>
 
               <h3>Projections</h3>
-              <p>Orthogonal projection of v onto u:</p>
-              <p className="font-mono bg-muted p-2 rounded">
-                proj_u(v) = (⟨v,u⟩/⟨u,u⟩)u
-              </p>
+              <p>Orthogonal projection of <Latex math="\mathbf{v}" /> onto <Latex math="\mathbf{u}" />:</p>
+              <div className="my-4">
+                <BlockLatex math="\text{proj}_{\mathbf{u}}(\mathbf{v}) = \frac{\langle \mathbf{v}, \mathbf{u} \rangle}{\langle \mathbf{u}, \mathbf{u} \rangle}\mathbf{u}" />
+              </div>
             </CardContent>
           </Card>
         </div>
